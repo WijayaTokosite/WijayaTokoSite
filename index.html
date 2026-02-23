@@ -30,7 +30,7 @@ nav{
     justify-content:space-between;
     align-items:center;
     backdrop-filter:blur(15px);
-    background:rgba(255,255,255,0.7);
+    background:rgba(255,255,255,0.85);
     box-shadow:0 10px 30px rgba(0,0,0,0.05);
     z-index:1000;
 }
@@ -38,6 +38,7 @@ nav{
 nav h1{
     font-weight:800;
     color:#0288d1;
+    letter-spacing:1px;
 }
 
 nav a{
@@ -45,22 +46,11 @@ nav a{
     text-decoration:none;
     color:#333;
     font-weight:500;
-    position:relative;
-}
-
-nav a::after{
-    content:"";
-    position:absolute;
-    width:0%;
-    height:2px;
-    bottom:-5px;
-    left:0;
-    background:#0288d1;
     transition:0.3s;
 }
 
-nav a:hover::after{
-    width:100%;
+nav a:hover{
+    color:#0288d1;
 }
 
 /* HERO */
@@ -73,8 +63,7 @@ nav a:hover::after{
 }
 
 .hero-box{
-    background:rgba(255,255,255,0.9);
-    backdrop-filter:blur(20px);
+    background:rgba(255,255,255,0.95);
     padding:70px;
     border-radius:40px;
     box-shadow:0 40px 100px rgba(0,0,0,0.1);
@@ -90,13 +79,12 @@ nav a:hover::after{
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
     margin-bottom:20px;
-    animation:slideDown 1s ease;
 }
 
 .hero-box p{
     font-size:18px;
     color:#555;
-    animation:fadeIn 1.8s ease;
+    line-height:1.6;
 }
 
 /* SECTION */
@@ -109,51 +97,79 @@ section{
 .section-box{
     width:100%;
     max-width:1200px;
-    background:rgba(255,255,255,0.9);
-    backdrop-filter:blur(20px);
+    background:white;
     border-radius:35px;
     padding:70px;
     box-shadow:0 25px 70px rgba(0,0,0,0.08);
-    text-align:center;
 }
 
 /* TITLE */
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
 .section-title h2{
     font-size:38px;
     color:#0288d1;
-    margin-bottom:15px;
+    margin-bottom:10px;
 }
 
 .section-title p{
     color:#666;
-    margin-bottom:50px;
+    margin-top:5px;
+    font-size:16px;
+    line-height:1.7;
 }
 
-/* GRID CENTER FIX */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,300px));
-    justify-content:center; /* INI BIKIN CENTER */
-    gap:35px;
+/* TABLE PRODUK */
+.table-container{
+    overflow-x:auto;
 }
 
-/* CARD */
-.card{
-    background:white;
-    border-radius:25px;
-    padding:35px;
-    box-shadow:0 15px 40px rgba(0,0,0,0.07);
-    transition:0.4s;
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+    border-radius:20px;
+    overflow:hidden;
 }
 
-.card:hover{
-    transform:translateY(-12px) scale(1.05);
-    box-shadow:0 30px 60px rgba(0,0,0,0.15);
+thead{
+    background:#0288d1;
+    color:white;
 }
 
-.card h3{
-    margin-bottom:15px;
-    color:#03a9f4;
+th, td{
+    padding:20px;
+    text-align:left;
+}
+
+th{
+    font-weight:600;
+    letter-spacing:0.5px;
+}
+
+tbody tr{
+    border-bottom:1px solid #eee;
+    transition:0.3s;
+}
+
+tbody tr:hover{
+    background:#f1f9ff;
+}
+
+/* CONTACT LIST */
+.contact-info{
+    margin-top:20px;
+    text-align:center;
+    font-size:17px;
+    line-height:2;
+    color:#444;
+}
+
+.contact-info strong{
+    color:#0288d1;
 }
 
 /* FOOTER */
@@ -165,32 +181,16 @@ footer{
     margin-top:120px;
 }
 
-/* ANIMATIONS */
+/* ANIMATION */
 @keyframes fadeZoom{
     from{opacity:0; transform:scale(0.9);}
     to{opacity:1; transform:scale(1);}
 }
 
-@keyframes slideDown{
-    from{opacity:0; transform:translateY(-40px);}
-    to{opacity:1; transform:translateY(0);}
-}
-
-@keyframes fadeIn{
-    from{opacity:0;}
-    to{opacity:1;}
-}
-
 @media(max-width:768px){
-    .hero-box h2{
-        font-size:32px;
-    }
-    .hero-box{
-        padding:40px;
-    }
-    .section-box{
-        padding:40px;
-    }
+    .hero-box h2{font-size:32px;}
+    .hero-box{padding:40px;}
+    .section-box{padding:40px;}
 }
 </style>
 </head>
@@ -208,7 +208,7 @@ footer{
 <div class="hero">
     <div class="hero-box">
         <h2>Premium Frozen Food Experience</h2>
-        <p>Toko Wijaya menyediakan berbagai macam produk frozen lengkap, murah, dan berkualitas dengan sistem penyimpanan terbaik untuk menjaga kesegaran maksimal.</p>
+        <p>Toko Wijaya menyediakan berbagai macam produk frozen lengkap, murah, dan berkualitas dengan sistem penyimpanan terbaik.</p>
     </div>
 </div>
 
@@ -216,7 +216,10 @@ footer{
     <div class="section-box">
         <div class="section-title">
             <h2>Tentang Toko Wijaya</h2>
-            <p>Pusat frozen food yang terpercaya dan harga bersahabat di Pupuan dengan pelayanan modern dan kualitas premium.</p>
+            <p>
+                Pusat frozen food yang terpercaya dan harga murah di Pupuan dengan pelayanan modern,
+                penyimpanan higienis, dan kualitas produk premium terbaik untuk keluarga Anda.
+            </p>
         </div>
     </div>
 </section>
@@ -224,28 +227,73 @@ footer{
 <section id="produk">
     <div class="section-box">
         <div class="section-title">
-            <h2>Produk & Keunggulan</h2>
-            <p>Kelengkapan produk dan standar kualitas tinggi menjadi prioritas utama kami.</p>
+            <h2>Daftar Produk Toko Wijaya</h2>
+            <p>Tambahkan produk sebanyak yang kamu mau di tabel berikut.</p>
         </div>
 
-        <div class="grid">
-            <div class="card">
-                <h3>🍗 Nugget & Sosis</h3>
-                <p>Beragam pilihan favorit keluarga dengan kualitas terbaik.</p>
-            </div>
-            <div class="card">
-                <h3>🥟 Dimsum & Siomay</h3>
-                <p>Aneka dimsum lezat dengan rasa premium dan higienis.</p>
-            </div>
-            <div class="card">
-                <h3>🐟 Seafood Frozen</h3>
-                <p>Olah-olahan frozen food ikan yang menarik serta harga bersahabat.</p>
-            </div>
-            <div class="card">
-                <h3>💰 Harga Bersahabat</h3>
-                <p>Cocok untuk keluarga maupun reseller dengan harga kompetitif.</p>
-            </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nama Produk atau Merek</th>
+                        <th>Kategori</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <!-- TAMBAH PRODUK DI SINI -->
+                    <tr>
+                        <td>Lezza & Hanarose</td>
+                        <td>Nugget & Sosis & Bakso Dan Kentang</td>
+                    </tr>
+
+                    <tr>
+                        <td>Bernardi</td>
+                        <td>Bakso</td>
+                    </tr>
+
+                    <tr>
+                        <td>Indomina</td>
+                        <td>Olahan Ikan</td>
+                    </tr>
+
+<td>Dosuka</td>
+                        <td>Sosis Ayam</td>
+                    </tr>
+                    
+                    <td>Ngejoss</td>
+                        <td>Bakso Dan Sosis</td>
+                    </tr>
+                    
+                    <td>Cedea</td>
+                        <td>Olahan Ikan</td>
+                    </tr>
+                    
+                    <td>Sogood</td>
+                        <td>Olahan Ayam</td>
+                    </tr>
+                    
+                    <td>Jofrans</td>
+                        <td>Sosis & Nugget</td>
+                    </tr>
+                    
+                    <td>Vitalia</td>
+                        <td>Roti Burger</td>
+                    </tr>
+                    
+                    <td>Kulit</td>
+                        <td>Kulit Lumpia & Kulit Pangsit & Kulit Dimsum</td>
+                    </tr>
+                    
+                    <td>Kentang</td>
+                        <td>Kentang</td>
+                    </tr>
+                    <!-- COPY FORMAT DI ATAS UNTUK TAMBAH PRODUK -->
+
+                </tbody>
+            </table>
         </div>
+
     </div>
 </section>
 
@@ -253,8 +301,14 @@ footer{
     <div class="section-box">
         <div class="section-title">
             <h2>Hubungi Kami</h2>
-            <p>📍 Pupuan, Bali<br>📞 08xxxxxxxxxx<br>📧 wijayachemixxx@gmail.com</p>
         </div>
+
+        <div class="contact-info">
+            <p><strong>Alamat:</strong> Pupuan, Bali</p>
+            <p><strong>WhatsApp:</strong> 08xxxxxxxxxx</p>
+            <p><strong>Email:</strong> xxxxxxxxxx@email.com</p>
+        </div>
+
     </div>
 </section>
 
