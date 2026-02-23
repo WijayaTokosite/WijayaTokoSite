@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toko Wijaya • Ultimate Premium</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#e6f7ff,#ffffff);
+    color:#222;
+    overflow-x:hidden;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    width:100%;
+    padding:20px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter:blur(15px);
+    background:rgba(255,255,255,0.85);
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    z-index:1000;
+}
+
+nav h1{
+    font-weight:800;
+    color:#0288d1;
+    letter-spacing:1px;
+}
+
+nav a{
+    margin-left:25px;
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#0288d1;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:0 20px;
+}
+
+.hero-box{
+    background:rgba(255,255,255,0.95);
+    padding:70px;
+    border-radius:40px;
+    box-shadow:0 40px 100px rgba(0,0,0,0.1);
+    max-width:900px;
+    text-align:center;
+    animation:fadeZoom 1.2s ease;
+}
+
+.hero-box h2{
+    font-size:48px;
+    font-weight:800;
+    background:linear-gradient(90deg,#0288d1,#00acc1);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    margin-bottom:20px;
+}
+
+.hero-box p{
+    font-size:18px;
+    color:#555;
+    line-height:1.6;
+}
+
+/* SECTION */
+section{
+    padding:120px 5%;
+    display:flex;
+    justify-content:center;
+}
+
+.section-box{
+    width:100%;
+    max-width:1200px;
+    background:white;
+    border-radius:35px;
+    padding:70px;
+    box-shadow:0 25px 70px rgba(0,0,0,0.08);
+}
+
+/* TITLE */
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-title h2{
+    font-size:38px;
+    color:#0288d1;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#666;
+    margin-top:5px;
+    font-size:16px;
+    line-height:1.7;
+}
+
+/* TABLE PRODUK */
+.table-container{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+thead{
+    background:#0288d1;
+    color:white;
+}
+
+th, td{
+    padding:20px;
+    text-align:left;
+}
+
+th{
+    font-weight:600;
+    letter-spacing:0.5px;
+}
+
+tbody tr{
+    border-bottom:1px solid #eee;
+    transition:0.3s;
+}
+
+tbody tr:hover{
+    background:#f1f9ff;
+}
+
+/* CONTACT LIST */
+.contact-info{
+    margin-top:20px;
+    text-align:center;
+    font-size:17px;
+    line-height:2;
+    color:#444;
+}
+
+.contact-info strong{
+    color:#0288d1;
+}
+
+/* FOOTER */
+footer{
+    padding:50px 20px;
+    text-align:center;
+    background:#01579b;
+    color:white;
+    margin-top:120px;
+}
+
+/* ANIMATION */
+@keyframes fadeZoom{
+    from{opacity:0; transform:scale(0.9);}
+    to{opacity:1; transform:scale(1);}
+}
+
+@media(max-width:768px){
+    .hero-box h2{font-size:32px;}
+    .hero-box{padding:40px;}
+    .section-box{padding:40px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <h1>TOKO WIJAYA</h1>
+    <div>
+        <a href="#tentang">Tentang</a>
+        <a href="#produk">Produk</a>
+        <a href="#kontak">Kontak</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <div class="hero-box">
+        <h2>Premium Frozen Food Experience</h2>
+        <p>Toko Wijaya menyediakan berbagai macam produk frozen lengkap, murah, dan berkualitas dengan sistem penyimpanan terbaik.</p>
+    </div>
+</div>
+
+<section id="tentang">
+    <div class="section-box">
+        <div class="section-title">
+            <h2>Tentang Toko Wijaya</h2>
+            <p>
+                Pusat frozen food yang terpercaya dan harga murah di Pupuan dengan pelayanan modern,
+                penyimpanan higienis, dan kualitas produk premium terbaik untuk keluarga Anda.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="produk">
+    <div class="section-box">
+        <div class="section-title">
+            <h2>Daftar Produk Toko Wijaya</h2>
+            <p>Tambahkan produk sebanyak yang kamu mau di tabel berikut.</p>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nama Produk atau Merek</th>
+                        <th>Kategori</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <!-- TAMBAH PRODUK DI SINI -->
+                    <tr>
+                        <td>Lezza & Hanarose</td>
+                        <td>Nugget & Sosis & Bakso Dan Kentang</td>
+                    </tr>
+
+                    <tr>
+                        <td>Bernardi</td>
+                        <td>Bakso</td>
+                    </tr>
+
+                    <tr>
+                        <td>Indomina</td>
+                        <td>Olahan Ikan</td>
+                    </tr>
+
+<td>Dosuka</td>
+                        <td>Sosis Ayam</td>
+                    </tr>
+                    
+                    <td>Ngejoss</td>
+                        <td>Bakso Dan Sosis</td>
+                    </tr>
+                    
+                    <td>Cedea</td>
+                        <td>Olahan Ikan</td>
+                    </tr>
+                    
+                    <td>Sogood</td>
+                        <td>Olahan Ayam</td>
+                    </tr>
+                    
+                    <td>Jofrans</td>
+                        <td>Sosis & Nugget</td>
+                    </tr>
+                    
+                    <td>Vitalia</td>
+                        <td>Roti Burger</td>
+                    </tr>
+                    
+                    <td>Kulit</td>
+                        <td>Kulit Lumpia & Kulit Pangsit & Kulit Dimsum</td>
+                    </tr>
+                    
+                    <td>Kentang</td>
+                        <td>Kentang</td>
+                    </tr>
+                    <!-- COPY FORMAT DI ATAS UNTUK TAMBAH PRODUK -->
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</section>
+
+<section id="kontak">
+    <div class="section-box">
+        <div class="section-title">
+            <h2>Hubungi Kami</h2>
+        </div>
+
+        <div class="contact-info">
+            <p><strong>Alamat:</strong> Pupuan, Bali</p>
+            <p><strong>WhatsApp:</strong> 08xxxxxxxxxx</p>
+            <p><strong>Email:</strong> xxxxxxxxxx@email.com</p>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    © 2026 Toko Wijaya • Ultimate Premium Frozen Brand
+</footer>
+
+</body>
+</html>
